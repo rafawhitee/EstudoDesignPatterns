@@ -8,12 +8,13 @@ public class Janela extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	// "Auto-Relacionamento"
-	// "Static" diz que todas as instâncias da Classe Janela teria os atributos declarados com static iguais para todos
+	// "Static" diz que todas as instâncias da Classe Janela terão os atributos declarados com static iguais para todos
 	private static Janela janela;
 
-	// O único construtor é privado, então só pode ser instanciado aqui dentro da Classe
+	// Construtor Privado, então só pode ser instanciado aqui dentro da Classe
 	private Janela() {
-		setSize(new Dimension(640, 480));
+		// Seta a dimensão do JFrame
+		setSize(new Dimension(800, 600));
 	}
 
 	// Método "Static", pois como o construtor é private, ele não pode instanciar de qualquer lugar com a palavra reservada "New"
@@ -22,6 +23,7 @@ public class Janela extends JFrame {
 	// Ou seja, ele sempre retornará a mesma instância
 	// Exemplo: se ele chamar 4 Janela.getInstance(), na primeira vez ele não existe, então irá de fato criar um novo (new) e retornar
 	// Nas outras vezes, ele não irá cair dentro do If, ou seja, irá retornar o objeto criado pela primeira vez
+	
 	public static Janela getInstance() {
 		if (janela == null) {
 			janela = new Janela();
